@@ -14,11 +14,10 @@ func NewPupil(firstName, lastName string) *Pupil {
 	}
 }
 
-func (pupil *Pupil) PutMark(teacher *Teacher, mark int) {
-	grades, ok := pupil.Grades[teacher.Subject.Name]
-	if !ok {
-		return
-	}
+func (pupil *Pupil) PutMark(subject *Subject, mark int) {
+	var subjectName string = subject.Name
 
-	pupil.Grades[teacher.Subject.Name] = append(grades, mark)
+	if grades, ok := pupil.Grades[subjectName]; ok {
+		pupil.Grades[subjectName] = append(grades, mark)
+	}
 }

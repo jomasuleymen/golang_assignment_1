@@ -7,20 +7,13 @@ func StartApp() {
 	mathTeacher := NewTeacher("Aigul", "Imanbayeva", mathSubject)
 
 	group1 := NewGroup("11B")
-	pupil1 := NewPupil("Ainash", "Suleymenova")
-	pupil2 := NewPupil("Zhomart", "Suleymen")
+	pupil := NewPupil("Zhomart", "Suleymen")
 
 	group1.AddSubjects(mathSubject)
-	group1.AddPupil(pupil1)
-	group1.AddPupil(pupil2)
+	group1.AddPupil(pupil)
 
-	pupil1.PutMark(mathTeacher, 5)
-	pupil1.PutMark(mathTeacher, 2)
-	pupil1.PutMark(mathTeacher, 4)
+	mathTeacher.PutMark(pupil, 4)
+	pupil.PutMark(mathSubject, 5)
 
-	pupil2.PutMark(mathTeacher, 5)
-	pupil2.PutMark(mathTeacher, 5)
-	pupil2.PutMark(mathTeacher, 5)
-
-	fmt.Println(pupil2)
+	fmt.Println(pupil)
 }

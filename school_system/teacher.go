@@ -6,6 +6,10 @@ type Teacher struct {
 	Subject   *Subject
 }
 
+func (teacher *Teacher) PutMark(pupil *Pupil, mark int) {
+	pupil.PutMark(teacher.Subject, mark)
+}
+
 func NewTeacher(firstName, lastName string, subject *Subject) *Teacher {
 	return &Teacher{
 		FirstName: firstName,
